@@ -1,0 +1,12 @@
+#include <assert.h>
+
+void KRB5_CALLCONV
+krb5_free_address(krb5_context context, krb5_address *val)
+{
+    if (val == NULL)
+        return;
+    free(val->contents);
+    free(val);
+}
+
+void KRB5_CALLCONV
